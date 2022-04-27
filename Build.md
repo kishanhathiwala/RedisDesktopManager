@@ -1,5 +1,5 @@
 #Steps to build the app
-1. git clone --recursive https://github.com/uglide/RedisDesktopManager.git -b <check the lasted branch> rdm && cd ./rdm
+1. git clone --recursive https://github.com/uglide/RedisDesktopManager.git -b (check branch) rdm && cd ./rdm
 2. Go to `3rdparty/qredisclient/3rdparty/hiredis` and apply the patch to fix compilation on Windows: `git apply ../hiredis-win.patch`
 3. Go to the `3rdparty/` folder and install zlib with nuget: `nuget install zlib-msvc14-x64 -Version 1.2.11.7795`
 4. Run the following commands:
@@ -15,7 +15,7 @@ make
 ```
 # build lz4
 cd 3rdparty/lz4/build/cmake
-cmake -DLZ4_BUNDLED_MODE=ON  -G"Visual Studio 17 2022" -A x64 .  //if this line throws error delete CMakeFiles folder and CMakeCache file (follow the instruction in command prompt)
+cmake -DLZ4_BUNDLED_MODE=ON  -G"Visual Studio 17 2022" -A x64 .  //if this line throws error follow the instruction in command prompt
 cmake  -G"Visual Studio 17 2022" -A x64 .
 msbuild /t:build LZ4.sln /p:Configuration="Release" //Run this line in Visual studio Developer Powershell
 
